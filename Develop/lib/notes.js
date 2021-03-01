@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const notes = require('../db/db.json');
+const { nanoid } = require('nanoid');
 
 function validateNote(note) {
     if (note.title === '' || !note.title) {
@@ -14,6 +15,7 @@ function validateNote(note) {
 
 function writeToFile(note) {
     const newNote = note;
+    newNote.id = nanoid();
     notes.push(newNote);
     fs.writeFileSync(
         path.join(__dirname, '../db/db.json'),

@@ -9,10 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const path = require('path');
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
-});
-
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
 });
@@ -42,6 +38,9 @@ app.get('/api/notes/:id', (req, res) => {
     let id = req.params.id;
     let result = findNote(id);
     res.json(result);
+});
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
 });
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}`);

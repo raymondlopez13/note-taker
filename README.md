@@ -1,5 +1,5 @@
   # note-taker
-
+  LINK TO APP: https://evening-scrubland-13174.herokuapp.com/
   ![photo of application](https://github.com/raymondlopez13/note-taker/blob/master/Develop/public/assets/images/Note-taker.png)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -29,7 +29,7 @@
 
   ## Questions
   If you have any questions, you can contact me at:
-  Email: raymondlopez13
+  Email: raymondlopez13@yahoo.com
   Github: raymondlopez13
 
   ## License

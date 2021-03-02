@@ -23,7 +23,34 @@ function writeToFile(note) {
     );
 }
 
+function deleteFile(note) {
+    const result = notes.filter(exNote => {
+        if (exNote !== note) {
+            return exNote;
+        }
+    });
+    fs.writeFile(
+        path.join(__dirname, '../db/db.json'), JSON.stringify(result, null, 2), (err) => {
+            if(err) {
+                throw err;
+            }
+        }
+    );
+    return result;
+}
+
+function findNote(id) {
+    const result = notes.filter(note => {
+        if (note.id === id) {
+            return note;
+        }
+    });
+    return result;
+}
+
 module.exports = {
     validateNote,
-    writeToFile
+    writeToFile,
+    deleteFile,
+    findNote
 }

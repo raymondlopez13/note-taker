@@ -1,6 +1,6 @@
   # note-taker
 
-
+  ![photo of application](https://github.com/raymondlopez13/note-taker/blob/master/Develop/public/assets/images/Note-taker.png)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Table of contents

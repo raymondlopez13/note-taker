@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const notes = require("./Develop/db/db.json");
+let notes = require("./Develop/db/db.json");
 const fs = require('fs');
 const { validateNote, writeToFile, deleteFile, findNote } = require('./Develop/lib/notes');
 app.use(express.static('Develop/public'));
@@ -31,6 +31,7 @@ app.delete('/api/notes/:id', (req, res) => {
     let id = req.params.id;
     let note = findNote(id);
     let result = deleteFile(note[0]);
+    notes = result;
     res.json(result);
 });
 app.get('/api/notes', (req, res) => {

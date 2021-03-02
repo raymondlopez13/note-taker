@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const notes = require('../db/db.json');
+let notes = require('../db/db.json');
 const { nanoid } = require('nanoid');
 
 function validateNote(note) {
@@ -29,13 +29,11 @@ function deleteFile(note) {
             return exNote;
         }
     });
-    fs.writeFile(
-        path.join(__dirname, '../db/db.json'), JSON.stringify(result, null, 2), (err) => {
-            if(err) {
-                throw err;
-            }
-        }
+    fs.writeFileSync(
+        path.join(__dirname, '../db/db.json'),
+        JSON.stringify(result, null, 2)
     );
+    notes = result;
     return result;
 }
 
